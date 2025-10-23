@@ -9,17 +9,21 @@ public abstract class Account : BankEntity
     protected Account(int id, string name, string owner, decimal startBalance = 0m) : base(id, name)
     { Owner = owner; Balance = startBalance; }
 
+    // Поповнення із базовою перевіркою.
     public virtual void Deposit(decimal amount)
     {
         if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
         Balance += amount;
     }
+    
+    // Зняття із перевіркою на достатність коштів.
     public virtual void Withdraw(decimal amount)
     {
         if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
         if (amount > Balance) throw new InvalidOperationException("Недостатньо коштів");
         Balance -= amount;
     }
+    // Вивід про рахунок.
     public override void PrintSummary() =>
         Console.WriteLine($"[{GetType().Name}] ID={Id}, '{Name}', {Owner}, {Balance:C}");
 }
