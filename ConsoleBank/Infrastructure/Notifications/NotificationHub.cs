@@ -8,6 +8,7 @@ public static class NotificationHub
     
     // Створюємо список подій усіх підписників на сповіщення.
     public static event NotificationHandler? OnNotify;
+
     
     // Метод для відправки повідомлення всім підписникам.
     public static void Notify(string message) => OnNotify?.Invoke($"[{DateTime.Now:HH:mm:ss}] {message}");
