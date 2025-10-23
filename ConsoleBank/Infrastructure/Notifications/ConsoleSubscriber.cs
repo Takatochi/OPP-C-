@@ -1,3 +1,5 @@
+using System;
+
 namespace ConsoleBank.Infrastructure.Notifications;
 
 public static class ConsoleSubscriber

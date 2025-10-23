@@ -1,3 +1,5 @@
+using System;
+
 namespace ConsoleBank.Domain.Abstractions;
 
 public abstract class Account : BankEntity
