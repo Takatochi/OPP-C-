@@ -1,0 +1,2 @@
+namespace ConsoleBank.Infrastructure.Notifications;
+
