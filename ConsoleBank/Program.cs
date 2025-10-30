@@ -16,8 +16,7 @@ internal class Program
         // Підписуємо консоль на повідомлення з банку (події)
         ConsoleSubscriber.WireUp();
         
-        // Підключаємо ще одного підписника, який логуватиме всі події у файл
-        FileLoggerSubscriber.WireUp();
+       
         
         // Створюємо фасад банку (координує роботу рахунків і сповіщення)
         var bank = new BankService();
